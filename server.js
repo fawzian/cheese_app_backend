@@ -37,7 +37,7 @@ const CheeseSchema = new mongoose.Schema({
   typeOf: String,
   image: String,
   cost: String,
-});ti
+});
 
 const Cheese = mongoose.model("Cheese", CheeseSchema);
 
