@@ -36,7 +36,7 @@ mongoose.connection
 const CheeseSchema = new mongoose.Schema({
   typeOf: String,
   image: String,
-  cost: String,
+  cost: String
 });
 
 const Cheese = mongoose.model("Cheese", CheeseSchema);
@@ -79,11 +79,11 @@ app.post("/cheese", async (req, res) => {
 });
 
 // CHEESE UPDATE ROUTE
-app.put("/people/:id", async (req, res) => {
+app.put("/cheese/:id", async (req, res) => {
     try {
-      // send all people
+      // send all cheese
       res.json(
-        await People.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        await Cheese.findByIdAndUpdate(req.params.id, req.body, { new: true })
       );
     } catch (error) {
       //send error
@@ -92,10 +92,10 @@ app.put("/people/:id", async (req, res) => {
   });
 
 //   CHEESE DELETE ROUTE
-app.delete("/people/:id", async (req, res) => {
+app.delete("/cheese/:id", async (req, res) => {
     try {
-      // send all people
-      res.json(await People.findByIdAndRemove(req.params.id));
+      // send all cheese
+      res.json(await Cheese.findByIdAndRemove(req.params.id));
     } catch (error) {
       //send error
       res.status(400).json(error);
