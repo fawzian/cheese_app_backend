@@ -34,9 +34,9 @@ mongoose.connection
 // MODELS
 ////////////////////////////////
 const CheeseSchema = new mongoose.Schema({
-  typeOf: String,
-  image: String,
-  cost: String
+    name: String,
+    countryOfOrigin: String,
+    image: String
 });
 
 const Cheese = mongoose.model("Cheese", CheeseSchema);
